@@ -8,6 +8,8 @@ body {
               "sidebar main-content";
 }
 
+/* Sidebar related */
+
 .sidebar {
   grid-area: sidebar;
   background-color: rgb(93, 160, 223);
@@ -16,7 +18,6 @@ body {
   grid-template-rows: 100px auto;
   grid-template-areas: "sidebar-head"
                       "sidebar-links";
-  align-items: start;
 }
 
 .sidebar h1 {
@@ -43,16 +44,60 @@ body {
   color: inherit;
 }
 
+/* Header related */
+
 .header {
   grid-area: header;
   background-color: rgb(228, 226, 223);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "header-top-left header-top-right"
+             "header-bottom-left header-bottom-right";
+}
+
+.header .search-container {
+  grid-area: header-top-left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.header .search-container input {
+  max-width: 40em;
+}
+
+.header .profile-container {
+  grid-area: header-top-right;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: end;
+  gap: 0px 40px;
+  padding-right: clamp(20px, 5vw, 100px);
+}
+
+.header .greeting-container {
+  grid-area: header-bottom-left;
+  display: grid;
+
+}
+
+.header .button-container {
+  grid-area: header-bottom-right;
 }
 
 .header img {
   border: red;
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
 }
+
+/* Main content related */
 
 .main-content {
   grid-area: main-content;

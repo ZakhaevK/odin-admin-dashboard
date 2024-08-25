@@ -1,7 +1,9 @@
 body {
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 5fr;
+  max-width: 1700px;
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 5fr);
+  grid-template-rows: auto auto;
   grid-template-areas:  "sidebar header"
               "sidebar main-content";
 }
@@ -9,6 +11,36 @@ body {
 .sidebar {
   grid-area: sidebar;
   background-color: rgb(93, 160, 223);
+  color: aliceblue;
+  display: grid;
+  grid-template-rows: 100px auto;
+  grid-template-areas: "sidebar-head"
+                      "sidebar-links";
+  align-items: start;
+}
+
+.sidebar h1 {
+  grid-area: sidebar-head;
+  margin-left: 40px
+}
+
+.sidebar ul {
+  grid-area: sidebar-links;
+}
+
+.sidebar li {
+  margin-top: 0.8em ;
+}
+
+.sidebar li:nth-child(6) {
+  margin-bottom: 2.5em;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: inherit;
 }
 
 .header {

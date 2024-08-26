@@ -48,12 +48,15 @@ body {
 
 .header {
   grid-area: header;
-  background-color: rgb(228, 226, 223);
+  background-color: rgb(236, 234, 231);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas: "header-top-left header-top-right"
              "header-bottom-left header-bottom-right";
+  padding-bottom: 1.2em;
+  padding-right: clamp(20px, 5vw, 100px);
+  box-shadow: 6px 4px 2px black;
 }
 
 .header .search-container {
@@ -67,7 +70,11 @@ body {
 }
 
 .header .search-container input {
+  background-color: rgb(210, 214, 221);
   max-width: 40em;
+  height: 2em;
+  border-radius: 24px;
+  border: none;
 }
 
 .header .profile-container {
@@ -78,18 +85,49 @@ body {
   align-items: center;
   justify-content: end;
   gap: 0px 40px;
-  padding-right: clamp(20px, 5vw, 100px);
+  
 }
 
 .header .greeting-container {
   grid-area: header-bottom-left;
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-left: clamp(20px, 4vw, 50px);
+}
 
+.header .greeting-container div p,
+.header .greeting-container div h1  {
+  margin: 0;
+  padding: 0;
+}
+
+.header .greeting-container .pfp {
+  width: 60px;
+  height: 60px;
 }
 
 .header .button-container {
   grid-area: header-bottom-right;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items:last baseline;
+  align-items: center;
 }
+
+.header .button-container button{
+  width: 7em;
+  height: 2.8em;
+  background-color: rgb(93, 160, 223);
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 20px;
+}
+
 
 .header img {
   border: red;

@@ -2,7 +2,7 @@ body {
   margin: auto;
   display: grid;
   max-width: 1500px;
-  grid-template-columns: minmax(200px, 1fr) minmax(200px, 5fr);
+  grid-template-columns: minmax(220px, 1.2fr) minmax(200px, 5fr);
   grid-template-rows: auto auto;
   grid-template-areas:  "sidebar header"
               "sidebar main-content";

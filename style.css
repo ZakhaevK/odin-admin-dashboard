@@ -172,7 +172,7 @@ body {
 
 .main-projects .card {
   display: grid;
-  padding: 2em 1em 1.3em 2em;
+  padding: 2em 2em 1.3em 2em;
   grid-template-rows: 1fr 3fr 1fr;
 }
 
@@ -182,6 +182,32 @@ body {
 
 .main-projects div h3 {
   margin-bottom: 0.5em;
+}
+
+.main-projects .card div {
+  display: flex;
+  justify-content: end;
+  gap: 1.6em;
+}
+
+/* card button icons */
+.main-projects .card div .icon-eye::after {
+  content: url(icons/eye-plus-outline.svg);
+  display: block;
+  width: 1.8rem;
+
+}
+
+.main-projects .card div .icon-star::after {
+  content: url(icons/star-plus-outline.svg);
+  display: block;
+  width: 1.8rem;
+}
+
+.main-projects .card div .icon-link::after {
+  content: url(icons/source-branch.svg);
+  display: block;
+  width: 1.8rem;;
 }
 
 .main-announcements {

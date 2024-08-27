@@ -194,20 +194,19 @@ body {
 
 /* card button icons */
 .main-projects .card div .icon-eye::after {
-  content: url(icons/eye-plus-outline.svg);
+  content: url(icons/card/eye-plus-outline.svg);
   display: block;
   width: 1.8rem;
-
 }
 
 .main-projects .card div .icon-star::after {
-  content: url(icons/star-plus-outline.svg);
+  content: url(icons/card/star-plus-outline.svg);
   display: block;
   width: 1.8rem;
 }
 
 .main-projects .card div .icon-link::after {
-  content: url(icons/source-branch.svg);
+  content: url(icons/card/source-branch.svg);
   display: block;
   width: 1.8rem;;
 }

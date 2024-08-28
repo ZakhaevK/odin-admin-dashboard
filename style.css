@@ -133,8 +133,22 @@ body {
   align-items: center;
   justify-content: end;
   gap: 0px 40px;
-  
 }
+
+.profile-container .header-bell {
+  border: red;
+  background-image: url(icons/header/bell-ring-outline.svg);
+  width: 1.7em;
+  height: 1.7em;
+}
+
+.profile-container .pfp {
+  border: red;
+  background-image: url();
+  width: 2.5em;
+  height: 2.5em;
+}
+
 
 .header .greeting-container {
   grid-area: header-bottom-left;
@@ -176,12 +190,6 @@ body {
   border-radius: 20px;
 }
 
-
-.header img {
-  border: red;
-  width: 2.5em;
-  height: 2.5em;
-}
 
 /* Main content related */
 

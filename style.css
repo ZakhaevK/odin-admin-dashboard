@@ -1,5 +1,5 @@
 :root {
-  --color-sidebar: rgb(43, 121, 156);
+  --color-sidebar: rgb(184, 37, 57);
   --color-primary: rgb(243, 240, 236);
   --color-secondary:rgb(215, 213, 218);
 }
@@ -67,7 +67,7 @@ body {
   font-weight: 800;
   font-size: 1.3rem;
   color: inherit;
-  padding-left: 1em;
+  padding-left: 1em
 }
 
 /* Sidebar button icons */
@@ -80,41 +80,15 @@ body {
   filter: invert();
 }
 
-#sb-home::before {
-  content: url(icons/sidebar/home.svg);
-}
-
-#sb-profile::before {
-  content: url(icons/sidebar/card-account-details-outline.svg);
-}
-
-#sb-msg::before {
-  content: url(icons/sidebar/message-reply.svg);
-}
-
-#sb-history::before {
-  content: url(icons/sidebar/clock-time-three.svg);
-}
-
-#sb-tasks:before {
-  content: url(icons/sidebar/file-multiple.svg);
-}
-
-#sb-comm::before {
-  content: url(icons/sidebar/account-group.svg);
-}
-
-#sb-setting::before {
-  content: url(icons/sidebar/cog.svg);
-}
-
-#sb-support::before {
-  content: url(icons/sidebar/help-box.svg);
-}
-
-#sb-privacy::before {
-  content: url(icons/sidebar/shield-check.svg);
-}
+#sb-home::before {content: url(icons/sidebar/home.svg);}
+#sb-profile::before {content: url(icons/sidebar/card-account-details-outline.svg);}
+#sb-msg::before {content: url(icons/sidebar/message-reply.svg);}
+#sb-history::before {content: url(icons/sidebar/clock-time-three.svg);}
+#sb-tasks:before {content: url(icons/sidebar/file-multiple.svg);}
+#sb-comm::before {content: url(icons/sidebar/account-group.svg);}
+#sb-setting::before {content: url(icons/sidebar/cog.svg);}
+#sb-support::before {content: url(icons/sidebar/help-box.svg);}
+#sb-privacy::before {content: url(icons/sidebar/shield-check.svg);}
 
 /* Header related */
 

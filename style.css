@@ -1,8 +1,16 @@
+:root {
+  --color-sidebar: rgb(43, 121, 156);
+  --color-primary: rgb(243, 240, 236);
+  --color-secondary:rgb(215, 213, 218);
+}
+
 body {
+  font-family: sans-serif;
+  background-color: rgb(54, 53, 53);
   margin: auto;
   display: grid;
   max-width: 1500px;
-  grid-template-columns: minmax(220px, 1.2fr) minmax(200px, 5fr);
+  grid-template-columns: minmax(240px, 1.2fr) minmax(200px, 5fr);
   grid-template-rows: auto auto;
   grid-template-areas:  "sidebar header"
               "sidebar main-content";
@@ -12,17 +20,30 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  background-color: rgb(61, 128, 228);
+  background-color: var(--color-sidebar);
   color: aliceblue;
   display: grid;
   grid-template-rows: 100px auto;
   grid-template-areas: "sidebar-head"
                       "sidebar-links";
+  font-size: 0.9rem;
+  padding-top: 0.8em;
 }
 
 .sidebar h1 {
+  position: relative;
   grid-area: sidebar-head;
-  margin-left: 40px
+  margin-left: 2.3em;
+}
+
+.sidebar h1::before {
+  position: absolute;
+  filter: invert();
+  content: url(icons/sidebar/view-dashboard.svg);
+  width: 50px;
+  left: -2em;
+  top:-0.32em;
+
 }
 
 .sidebar ul {
@@ -30,25 +51,76 @@ body {
 }
 
 .sidebar li {
-  margin-top: 0.8em ;
+  margin-left: 0.5em;
+  margin-bottom: 1.5em;
+  list-style: none;
+
 }
 
 .sidebar li:nth-child(6) {
-  margin-bottom: 2.5em;
+  margin-bottom: 5em;
 }
 
-.sidebar a {
+.sidebar a { 
+  position: relative;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: inherit;
+  padding-left: 1em;
+}
+
+/* Sidebar button icons */
+
+.sidebar a::before {
+  position: absolute;
+  left: -1em;
+  top: -0.06em;
+  width: 1.55rem;
+  filter: invert();
+}
+
+#sb-home::before {
+  content: url(icons/sidebar/home.svg);
+}
+
+#sb-profile::before {
+  content: url(icons/sidebar/card-account-details-outline.svg);
+}
+
+#sb-msg::before {
+  content: url(icons/sidebar/message-reply.svg);
+}
+
+#sb-history::before {
+  content: url(icons/sidebar/clock-time-three.svg);
+}
+
+#sb-tasks:before {
+  content: url(icons/sidebar/file-multiple.svg);
+}
+
+#sb-comm::before {
+  content: url(icons/sidebar/account-group.svg);
+}
+
+#sb-setting::before {
+  content: url(icons/sidebar/cog.svg);
+}
+
+#sb-support::before {
+  content: url(icons/sidebar/help-box.svg);
+}
+
+#sb-privacy::before {
+  content: url(icons/sidebar/shield-check.svg);
 }
 
 /* Header related */
 
 .header {
   grid-area: header;
-  background-color: rgb(236, 234, 231);
+  background-color: var(--color-primary);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
@@ -72,7 +144,7 @@ body {
 }
 
 .header .search-container input {
-  background-color: rgb(215, 213, 218);
+  background-color: var(--color-secondary);
   max-width: 40em;
   height: 2em;
   border-radius: 24px;
@@ -122,7 +194,7 @@ body {
 .header .button-container button{
   width: 7em;
   height: 2.8em;
-  background-color: rgb(61, 128, 228);
+  background-color: var(--color-sidebar);
   color: aliceblue;
   font-weight: 700;
   font-size: 0.9rem;
@@ -142,13 +214,19 @@ body {
 .main-content {
   display: grid;
   grid-area: main-content;
-  background-color: rgb(215, 213, 218);
-  grid-template-columns: 4fr 1.4fr;
+  background-color: var(--color-secondary);
+  grid-template-columns: 4fr 1.5fr;
   grid-template-rows: auto 1fr 1fr;
   grid-template-areas:  "proj-h2 annouce-h2"
                         "projects annnouncements"
                         "projects trending";
-  padding: 1.5em;
+  padding: 0em 2em 4em 1em;
+  font-size: 1rem;
+}
+
+.main-content h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5em;
 }
 
 .main-projects  {
@@ -163,13 +241,9 @@ body {
 
 .card {
   border-radius: 12px;
-  background-color: rgb(236, 234, 231);
+  background-color: rgb(243, 240, 236);
   position: relative;
   box-shadow: 1px 3px 4px rgb(199, 199, 199);
-}
-
-.main-projects h2 {
-  grid-column: 1 / 4;
 }
 
 .main-projects .card {

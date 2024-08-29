@@ -131,8 +131,8 @@ body {
   display: block;
   content: url(icons/header/magnify.svg);
   left: calc(-1em + 3vw);
-  width: 1.75em;
-  top: 1.3em;
+  width: 1.6em;
+  top: 1.4em;
 }
 
 .header .profile-container {
@@ -212,8 +212,8 @@ body {
   display: grid;
   grid-area: main-content;
   background-color: var(--color-secondary);
-  grid-template-columns: 4fr minmax(240px, 1.3fr);
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 4fr minmax(240px, 1.5fr);
+  grid-template-rows: auto;
   grid-template-areas:  "projects annnouncements"
                         "projects trending";
   padding: 0em 2em 4em 1em;
@@ -221,19 +221,24 @@ body {
 }
 
 
-.main-content h2 {
+.main-content h2, 
+.main-announcements h2,
+.main-trending h2 {
   font-size: 1.3rem;
   margin-top: 1.5em;
+  margin-bottom: 0;
+  padding: 1em 0;
 }
 
 .main-projects {
   display: grid;
   grid-area: projects;
-  align-content: baseline;
+  grid-template-rows: auto;
 }
 
 .main-projects .cards  {
   display: grid;
+  align-self:stretch;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   grid-template-rows: 1fr 1fr 1fr;
   grid-auto-flow: row;
@@ -255,9 +260,10 @@ body {
 
 .main-projects .card {
   display: grid;
-  padding: 2em 2em 1em 1.5em;
+  padding: 1.2em 2em 1.6em 1.5em;
   grid-template-rows: auto 3fr 1fr;
   border-left: 10px solid rgb(214, 167, 80);
+  font-size: 0.89;
 }
 
 .main-projects div * {
@@ -296,8 +302,7 @@ body {
 
 .main-announcements {
   display: grid;
-  align-self: baseline;
-  grid-template-rows: auto auto;
+  align-content: baseline;
 }
 
 .main-announcements .card {
@@ -330,16 +335,66 @@ body {
 
 .main-trending {
   display: grid;
-  align-self: baseline;
   grid-template-rows: auto auto;
+  align-content: baseline;
 }
 
 .main-trending .card {
   display: grid;
-  height: 17em;
   grid-template-rows: repeat(4, 1fr);
-  padding: 2em 1em 1em 1em;
+  padding: 1.5em 1em 1em 1em;
   max-width: 350px;
+}
+
+.main-trending .card * {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.main-trending .card div {
+  margin: 1em 0em 1em 5em;
+}
+
+.main-trending .card div a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+}
+
+.main-trending .card div a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+}
+
+.trend-user a::before {
+  content: '';
+  background-size: cover;
+  position: absolute;
+  display: block;
+  height: 48px;
+  width: 48px;
+  border-radius: 2em;
+  border: 1px solid white;
+  left: -5em;
+  top: -0.7em;
+}
+
+.trend-user:nth-child(1) a::before {
+  background-image: url(images/gothic.png);
+}
+
+.trend-user:nth-child(2) a::before {
+  background-image: url(images/pfp.bmp);
+}
+
+.trend-user:nth-child(3) a::before {
+  background-image: url(images/snoop.png);
+}
+
+.trend-user:nth-child(4) a::before {
+  background-image: url(images/gelt.png);
 }
 
 /* Scaling of grid elements */

@@ -10,7 +10,7 @@ body {
   margin: auto;
   display: grid;
   max-width: 1500px;
-  grid-template-columns: minmax(240px, 1.2fr) minmax(200px, 5fr);
+  grid-template-columns: minmax(220px, 1fr) minmax(150px, 4fr);
   grid-template-rows: auto auto;
   grid-template-areas:  "sidebar header"
               "sidebar main-content";
@@ -137,12 +137,12 @@ body {
 
 .header .profile-container {
   grid-area: header-top-right;
-  display: grid;
+  display: flex;
   grid-template-columns: auto auto auto;
   grid-template-rows: 1fr;
   align-items: center;
   justify-content: end;
-  gap: 0px 40px;
+  gap: 1.5em
 }
 
 .profile-container .header-bell {
@@ -182,14 +182,15 @@ body {
 
 .header .button-container {
   grid-area: header-bottom-right;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
   grid-template-rows: auto;
-  justify-items:last baseline;
+  justify-content: space-around;
+  gap: 0 0.5em ;
   align-items: center;
 }
 
-.header .button-container button{
+.header .button-container button {
   width: 7em;
   height: 2.8em;
   background-color: var(--color-sidebar);
@@ -227,11 +228,10 @@ body {
 }
 
 .main-projects .cards  {
-  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
   grid-auto-flow: row;
-  gap: 1.5em;
+  gap: 1em;
   margin-right: 1.5em;
   padding: 0;
 }
@@ -303,12 +303,13 @@ body {
 
 .main-trending {
   display: grid;
+  align-self: baseline;
   grid-template-rows: auto auto;
 }
 
 .main-trending .card {
   display: grid;
-  height: 16em;
+  height: 17em;
   grid-template-rows: repeat(4, 1fr);
   padding: 2em 1em 1em 1em;
   max-width: 350px;
@@ -316,7 +317,33 @@ body {
 
 /* Scaling of grid elements */
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 800px) {
+body {
+  grid-template-columns: 80px minmax(150px, 5fr);
+}
+
+  .header {
+    font-size: 0.8rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header-top-left header-top-right"
+             "header-bottom-left header-bottom-left" 
+             "header-bottom-right header-bottom-right";
+  }
+
+  .header * {
+    justify-content: center;
+  }
+
+  .header .button-container {
+    justify-content: center;
+    gap: 0 2em ;
+  }
+
+  .header .profile-container {
+    justify-content: end;
+    gap: 1em
+  }
+
   .main-content {
     grid-template-columns: 1fr;
     grid-template-areas:"projects"
@@ -335,5 +362,28 @@ body {
   .main-trending {
     justify-self: center;
     min-width: 350px;
+  }
+
+  .sidebar {
+    color: var(--color-sidebar);
+    overflow: hidden;
+  }
+
+  .sidebar li {
+    margin-bottom: 2em;
+  }
+
+  .sidebar h1::before {
+    position: absolute;
+    left: -1.8em;
+    top: 0em;
+    width: 3rem;
+  }
+
+  .sidebar a::before {
+    position: absolute;
+    left: -1.2em;
+    top: 0em;
+    width: 2rem;
   }
 }

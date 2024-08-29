@@ -201,6 +201,10 @@ body {
   border-radius: 20px;
 }
 
+.pfp {
+  border-radius: 2em
+}
+
 
 /* Main content related */
 
@@ -208,7 +212,7 @@ body {
   display: grid;
   grid-area: main-content;
   background-color: var(--color-secondary);
-  grid-template-columns: 4fr minmax(220px, 1.5fr);
+  grid-template-columns: 4fr minmax(240px, 1.3fr);
   grid-template-rows: auto 1fr;
   grid-template-areas:  "projects annnouncements"
                         "projects trending";
@@ -225,11 +229,13 @@ body {
 .main-projects {
   display: grid;
   grid-area: projects;
+  align-content: baseline;
 }
 
 .main-projects .cards  {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
   grid-auto-flow: row;
   gap: 1em;
   margin-right: 1.5em;
@@ -238,15 +244,19 @@ body {
 
 .card {
   border-radius: 12px;
-  background-color: rgb(243, 240, 236);
+  background-color: var(--color-primary);
   position: relative;
   box-shadow: 1px 3px 4px rgb(199, 199, 199);
 }
 
+.card p {
+  color: rgb(87, 87, 87);
+}
+
 .main-projects .card {
   display: grid;
-  padding: 2em 2em 1.3em 2em;
-  grid-template-rows: 1fr 3fr 1fr;
+  padding: 2em 2em 1em 1.5em;
+  grid-template-rows: auto 3fr 1fr;
   border-left: 10px solid rgb(214, 167, 80);
 }
 
@@ -261,26 +271,27 @@ body {
 .main-projects .card div {
   display: flex;
   justify-content: end;
-  gap: 1.6em;
+  align-items: center;
+  gap: 1.5em;
 }
 
 /* card button icons */
 .main-projects .card div .icon-eye::after {
   content: url(icons/card/eye-plus-outline.svg);
   display: block;
-  width: 1.8rem;
+  width: 1.55rem;
 }
 
 .main-projects .card div .icon-star::after {
   content: url(icons/card/star-plus-outline.svg);
   display: block;
-  width: 1.8rem;
+  width: 1.55rem;
 }
 
 .main-projects .card div .icon-link::after {
   content: url(icons/card/source-branch.svg);
   display: block;
-  width: 1.8rem;;
+  width: 1.55rem;;
 }
 
 .main-announcements {
@@ -292,13 +303,29 @@ body {
 .main-announcements .card {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 2em 1em 1em 1em;
-  height: 16em;
+  padding: 1.4em 1em 1em 1em;
   max-width: 350px;
+  font-size: 0.8rem;
+  gap: 0em
 }
 
 .main-announcements .card div * {
   margin: 0;
+  padding: 0
+}
+
+.main-announcements .card div h3 {
+  margin: 0;
+  padding: 0.2em 0;
+}
+
+.main-announcements .card div {
+  margin: 0em 0.5em;
+  padding: 1em 1em;
+}
+
+.main-announcements .card div:not(:last-child) {
+  border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .main-trending {
